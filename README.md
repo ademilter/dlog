@@ -1,3 +1,3 @@
 # Dlog
-developerlar için blog teması - yalnız frontend kodları içerir
+simple blog theme - only frontend codes
 
