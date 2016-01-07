@@ -1,0 +1,115 @@
+.Post {
+
+  // LINK //////////////////
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      color: $theme-color;
+    }
+  }
+
+  // HEAD //////////////////
+
+  h2, h3, h4, h5, h6, p, ul, ol, figure {
+    margin-top: $margin-typography-element;
+  }
+
+  h1, h2, h3 {
+    @include font("title");
+    line-height: 1.1;
+  }
+
+  h2, h3 {
+    & + * {
+      margin-top: 6px;
+      @include device {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 34px;
+    @include device {
+      font-size: 48px;
+    }
+  }
+
+  h2 {
+    margin-top: 30px;
+    font-size: 26px;
+    @include device {
+      margin-top: 50px;
+      font-size: 36px;
+    }
+  }
+
+  h3 {
+    font-size: 22px;
+    @include device {
+      font-size: 28px;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.36;
+    color: #777;
+    @include device {
+      color: #888;
+      font-size: 26px;
+    }
+  }
+
+  // LIST //////////////////
+
+  ol, ul {
+    list-style: disc inside;
+
+    & ol,
+    & ul {
+      margin-top: 15px;
+      padding-left: 1em;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+  }
+
+}
+
+// CODE //////////////////
+
+pre, code, kbd {
+  @include font("mono");
+}
+
+pre, :not(pre) > code, kbd {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+pre {
+  padding: 20px 0;
+  border: dashed $color-shadow;
+  border-width: 1px 0;
+  //border: 1px solid $color-smoke;
+  //padding-top: 8px;
+  //padding-bottom: 8px;
+}
+
+:not(pre) > code {
+  padding: 1px 4px 3px;
+  border-radius: 2px;
+  white-space: normal;
+  background: $color-smoke;
+}
+
+kbd {
+  color: white;
+  background-color: rgba(black, .8);
+}

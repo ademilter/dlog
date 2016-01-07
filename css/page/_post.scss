@@ -1,0 +1,23 @@
+////////////////////////////////////////////////
+// POST
+////////////////////////////////////////////////
+
+.Post {
+  margin-top: 140px;
+  @include device("cinema") {
+    font-size: $fonts-size--cinema;
+  }
+
+  .width {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
+  }
+
+}

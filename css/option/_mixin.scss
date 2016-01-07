@@ -1,0 +1,67 @@
+@mixin device($screen: "desktop") {
+  @if ($screen == "desktop") {
+    @media only screen and (min-width: $container-width-p) {
+      @content;
+    }
+  } @else if ($screen == "cinema") {
+    @media only screen and (min-width: $container-width--outer-p) {
+      @content;
+    }
+  }
+}
+
+@mixin font($style: "serif", $weight: "normal") {
+
+  @if ($style == "sans") {
+    font-family: 'Roboto', sans-serif;
+    @if ($weight == "light") {
+      font-weight: 300;
+    } @else if ($weight == "normal") {
+      font-weight: 400;
+    } @else if ($weight == "bold") {
+      font-weight: 500;
+    }
+  } @else if ($style == "serif") {
+    font-family: 'PT Serif', serif;
+    @if ($weight == "light") {
+      font-weight: 400;
+    } @else if ($weight == "normal") {
+      font-weight: 400;
+    } @else if ($weight == "bold") {
+      font-weight: 700;
+    }
+  } @else if ($style == "title") {
+    font-family: 'Roboto Condensed', sans-serif;
+    @if ($weight == "light") {
+      font-weight: 700;
+    } @else if ($weight == "normal") {
+      font-weight: 700;
+    } @else if ($weight == "bold") {
+      font-weight: 700;
+    }
+  } @else if ($style == "mono") {
+    font-family: 'Roboto Mono', 'Menlo', Consolas, Monaco, 'Ubuntu Mono', monospace;
+    @if ($weight == "light") {
+      font-weight: 400;
+    } @else if ($weight == "normal") {
+      font-weight: 400;
+    } @else if ($weight == "bold") {
+      font-weight: 700;
+    }
+  }
+
+}
+
+@mixin link() {
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, transparent 50%, currentColor 50%);
+  background-size: auto 2px;
+  background-position: 0 92%;
+  background-repeat: repeat-x;
+  text-shadow: 1px 0 white, -1px 0 white, 2px 0 white, -2px 0 white;
+
+  &:hover,
+  &:focus {
+    color: $theme-color;
+  }
+}

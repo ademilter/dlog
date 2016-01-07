@@ -1,0 +1,43 @@
+// QUOTE //////////////
+
+.quote {
+
+  blockquote {
+    @include font("sans");
+    //font-weight: bold;
+    //font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+
+    @include device {
+      font-size: 30px;
+    }
+
+    &:before {
+      content: "“";
+    }
+
+    &:after {
+      content: "”";
+    }
+
+    .width--outer & {
+      @include device {
+        text-align: center;
+      }
+    }
+  }
+
+  figcaption {
+    text-align: left;
+
+    @include device {
+      text-align: center;
+    }
+
+    &:before {
+      content: "—";
+    }
+  }
+
+}

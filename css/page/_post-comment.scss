@@ -1,0 +1,12 @@
+////////////////////////////////////////////////
+// POST - Comment
+////////////////////////////////////////////////
+
+.PostComment {
+  background-color: #f5f5f5;
+  padding: 30px 0;
+
+  @include device {
+    padding: 60px 0;
+  }
+}

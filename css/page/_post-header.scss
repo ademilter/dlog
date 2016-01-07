@@ -1,0 +1,7 @@
+.PostHeader {
+  margin-bottom: 10px;
+  @include font("sans");
+  font-size: 16px;
+  line-height: 1;
+  color: $color-shadow;
+}

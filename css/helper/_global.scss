@@ -1,0 +1,83 @@
+@import url($font-url);
+
+html {
+  overflow-x: hidden;
+  @include font();
+  font-size: $fonts-size;
+  line-height: 1.6;
+  color: $color-text;
+
+  @include device {
+    font-size: $fonts-size--desktop;
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include font("sans");
+}
+
+// LINK
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+// HELPER
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.u-isHiddenVisually {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important
+}
+
+// CONTAINER
+
+.width {
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $offset-padding;
+  padding-left: $offset-padding;
+
+  @include device {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &--outer {
+    //margin-top: $offset-padding;
+    //margin-bottom: $offset-padding;
+    max-width: $container-width--outer;
+  }
+
+  &--full {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 100%;
+
+    @include device {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  }
+}

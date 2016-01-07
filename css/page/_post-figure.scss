@@ -1,0 +1,48 @@
+/////////////////////////////////////////
+// FIGURE
+/////////////////////////////////////////
+
+figure {
+  position: relative;
+
+  img {
+    max-width: 100%;
+  }
+
+  iframe,
+  video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/////////////////////////////////////////
+// ASPECT RATIO
+/////////////////////////////////////////
+
+.video_embed {
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: percentage(9/16);
+  }
+
+  iframe {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+}
+
+/////////////////////////////////////////
+// OTHER
+/////////////////////////////////////////
+
+.gist .gist-file {
+  margin-bottom: 0 !important;
+}

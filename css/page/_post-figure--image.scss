@@ -1,0 +1,16 @@
+// IMAGE //////////////
+
+.image {
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &--full {
+    img {
+      cursor: default;
+      width: 100%;
+    }
+  }
+}

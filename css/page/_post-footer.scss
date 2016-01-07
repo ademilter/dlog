@@ -1,0 +1,107 @@
+////////////////////////////////////////////////
+// POST - Action
+////////////////////////////////////////////////
+
+.PostAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+
+  @include device {
+    flex-direction: row;
+    margin: 80px 0;
+  }
+
+  .Post &Buttons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+
+    a {
+      position: relative;
+      display: block;
+      margin-right: 10px;
+      margin-left: 10px;
+      width: 1em;
+      height: 1em;
+      font-size: 28px;
+      color: #BAC8D2;
+      transform-origin: 50% 50%;
+      transition: .15s;
+
+      @include device {
+        margin-left: 0;
+        margin-right: 20px;
+        font-size: 30px;
+      }
+
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+      }
+
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: 50% 50%;
+        transform: translate(-50%, -50%);
+        transition: .15s;
+      }
+
+      &[data-action-button="reply"] {
+        &:hover, &:focus {
+          color: #20B7FE;
+        }
+
+        .icon {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      &[data-action-button="retweet"] {
+        &:hover, &:focus {
+          color: #00D76E;
+        }
+
+        .icon {
+          transform: translate(-50%, -50%) scale(1.15);
+        }
+      }
+
+      &[data-action-button="like"] {
+        &:hover, &:focus {
+          color: #F3355A;
+        }
+
+        .icon {
+          transform: translate(-50%, -50%) scale(.85);
+        }
+      }
+
+    }
+  }
+
+  &Share {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+
+    @include device {
+      margin-top: 0;
+      flex-direction: row;
+    }
+
+    .twitter-follow-button {
+      margin-top: 20px;
+
+      @include device {
+        margin-top: 0;
+        margin-left: 10px;
+      }
+    }
+  }
+
+}

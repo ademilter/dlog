@@ -1,0 +1,103 @@
+////////////////////////////////////////////////
+// HOME - Archive
+////////////////////////////////////////////////
+
+.Writing {
+  margin-bottom: 100px;
+}
+
+.Archive {
+
+  &List {
+    position: relative;
+    @include device("cinema") {
+      margin-left: -$container-outer-width;
+      padding-left: $container-outer-width;
+    }
+
+    & + & {
+      margin-top: 30px;
+      @include device("cinema") {
+        margin-top: 0;
+      }
+    }
+
+    &:before {
+      content: attr(data-archive-year);
+      display: block;
+      @include font("sans");
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $color-shadow;
+      border-bottom: 1px solid $color-smoke;
+      @include device("cinema") {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        font-size: inherit;
+        line-height: 50px;
+        background-color: $color-smoke;
+        border-bottom: 0;
+      }
+    }
+  }
+
+  & {
+    border-bottom: 1px solid $color-smoke;
+
+    @include device("cinema") {
+      border-bottom: 0;
+
+      & + & {
+        border-top: 1px solid $color-smoke;
+      }
+    }
+  }
+
+  &-link {
+    display: block;
+    position: relative;
+    padding: 12px 0;
+    @include font("sans");
+    @include device {
+      display: flex;
+      line-height: 50px;
+      padding: 0;
+    }
+
+    &:hover,
+    &:focus {
+      color: $theme-color;
+      text-decoration: none;
+    }
+
+  }
+
+  &_title {
+    font-size: inherit;
+    font-weight: 500;
+    @include device {
+      flex: 1;
+      order: 1;
+    }
+  }
+
+  &_date {
+    display: block;
+    font-size: 14px;
+    color: $color-light;
+    @include device {
+      order: 2;
+      font-size: 16px;
+    }
+
+    .Archive_link:hover &,
+    .Archive_link:focus & {
+      color: $color-text;
+    }
+  }
+
+}

@@ -1,0 +1,85 @@
+// FIGURE TITLE
+
+figcaption {
+  margin-top: 8px;
+  @include font("sans");
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  color: $color-light;
+
+  @include device {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @include device("cinema") {
+    .width:not(.width--outer) & {
+      &[data-title-align*="top"],
+      &[data-title-align*="bottom"],
+      &[data-title-align*="left"],
+      &[data-title-align*="right"] {
+        width: $container-outer-width;
+        margin-top: 0;
+        position: absolute;
+        padding-top: 10px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 30px;
+          height: 1px;
+          background-color: #eee;
+        }
+      }
+
+      &[data-title-align*="top"],
+      &[data-title-align*="left"]:not([data-title-align*="bottom"]),
+      &[data-title-align*="right"]:not([data-title-align*="bottom"]) {
+        top: 0;
+
+        &:before {
+          top: 0;
+        }
+      }
+
+      &[data-title-align*="bottom"] {
+        bottom: 0;
+
+        &:before {
+          top: 0;
+        }
+      }
+
+      &[data-title-align*="left"],
+      &[data-title-align*="top"]:not([data-title-align*="right"]),
+      &[data-title-align*="bottom"]:not([data-title-align*="right"]) {
+        right: 100%;
+        margin-right: $offset-padding;
+        text-align: right;
+
+        &:before {
+          right: 0;
+        }
+      }
+
+      &[data-title-align*="right"] {
+        left: 100%;
+        margin-left: $offset-padding;
+        text-align: left;
+
+        &:before {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  strong,
+  b {
+    font-weight: inherit;
+  }
+
+}

@@ -1,0 +1,56 @@
+////////////////////////////////////////////////
+// HOME - About
+////////////////////////////////////////////////
+
+.About {
+  display: flex;
+  align-items: center;
+  max-height: 680px;
+  padding: 60px 0;
+
+  @include device {
+    height: 80vh;
+  }
+
+  &_title {
+    @include font("sans", "light");
+    font-size: 22px;
+    line-height: 1.44;
+    @include device {
+      margin-right: 0;
+      font-size: 30px;
+    }
+
+    strong {
+      @include font("sans", "bold");
+    }
+
+    abbr {
+      border-bottom: none;
+    }
+  }
+
+  &_info {
+    margin: $margin-typography-element 0;
+    color: $color-light;
+
+    a {
+      @include link;
+    }
+
+  }
+
+  &_follow {
+    margin-top: 50px;
+
+    &:before {
+      content: "";
+      display: block;
+      margin-bottom: 20px;
+      width: 30px;
+      height: 1px;
+      background-color: $color-smoke;
+    }
+  }
+
+}
